@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UiComponent implements OnInit {
 
+  // propriété de la classe
+  public open = true;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  // propriété de la classe exécutée par le (click) => event binding
+  public toggle(): void {
+    this.open = !this.open;
+    console.log(this.open);
   }
 
 }
