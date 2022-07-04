@@ -1,5 +1,5 @@
 <header class="fixed-top">
-  header component
+  <ng-content select=".tr-header"></ng-content>
 </header>
 
 <main>
@@ -10,17 +10,17 @@
 
   <aside>
     <div class="scroller">
-      Nav component
+      <ng-content select=".tr-nav"></ng-content>
     </div>
   </aside>
 
   <div class="page">
     <div class="contents">
-      Content pages
+      <ng-content select=".tr-content"></ng-content>
     </div>
 
     <footer>
-      footer component
+      <ng-content select=".tr-footer"></ng-content>
     </footer>
   </div>
 </main>
