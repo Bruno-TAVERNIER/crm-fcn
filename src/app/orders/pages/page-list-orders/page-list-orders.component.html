@@ -2,11 +2,18 @@
  <app-table-light [headers]="headers">
   <tr *ngFor="let item of collection">
     <td>{{ item.typePresta }}</td>
-    <td>{{ item.client }}</td>
-    <td>{{ item.nbJours }}</td>
-    <td>{{ item.tjmHt }}</td>
-    <td>{{ item.nbJours | total: item.tjmHt }}</td>
-    <td>{{ item.nbJours | total: item.tjmHt: item.tva }}</td>
+    <td>{{ item.client | uppercase }}</td>
+    <!-- pipe pourcentages -->
+    <td>{{ item.tva/100 | percent }}</td>
+    <!-- pipe number:'format' avec format: 1 pour nombre mini avant la virgule,
+          2 pour nombre mini après la virgule
+        -x si besoin pour nb maxi après la virgule -->
+    <td [ngClass]="{'ko': item.nbJours< 10, 'ok':item.nbJours>=10}">{{ item.nbJours | number:'1.2-2' }}</td>
+    <td>{{ item.tjmHt | currency }}</td>
+    <td>{{ item.nbJours | total: item.tjmHt | currency }}</td>
+    <td>{{ item.nbJours | total: item.tjmHt: item.tva | currency }}</td>
+    <!-- affichage des 20 premiers caractères du commentaire -->
+    <td>{{ item.comment | noComment: 20}}</td>
     <td>{{ item.state }}</td>
   </tr>
  </app-table-light>

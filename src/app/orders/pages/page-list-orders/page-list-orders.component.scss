@@ -1,0 +1,13 @@
+/* alternance couleur 1 ligne sur 2 des couleurs du tableau */
+tr:nth-child(odd) {
+  background: var(--app-light);
+}
+tr:nth-child(even){
+  background: var(--app-dark2);
+}
+.ok {
+  background: var(--app-success);
+}
+.ko {
+  background: var(--app-warning);
+}

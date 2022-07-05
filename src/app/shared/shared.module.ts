@@ -6,12 +6,14 @@ import { RouterModule } from '@angular/router';
 import { IconsModule } from '../icons/icons.module';
 import { TemplatesModule } from '../templates/templates.module';
 import { TotalPipe } from './total.pipe';
+import { NoCommentPipe } from './pipes/no-comment.pipe';
 
 @NgModule({
   declarations: [
     TableLightComponent,
     BtnComponent,
-    TotalPipe
+    TotalPipe,
+    NoCommentPipe
   ],
   imports: [
     CommonModule, RouterModule
@@ -21,7 +23,8 @@ import { TotalPipe } from './total.pipe';
     BtnComponent,
     IconsModule,
     TemplatesModule,
-    TotalPipe
+    TotalPipe,
+    NoCommentPipe
   ]
 })
 export class SharedModule { }

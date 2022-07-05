@@ -18,10 +18,12 @@ export class PageListOrdersComponent implements OnInit {
     this.headers = [
       'Type',
       'Client',
+      'Taux TVA',
       'Nb Jours',
       'Tjm HT',
       'Total HT',
       'Total TTC',
+      'Commentaire',
       'State'
     ];
   }
