@@ -29,6 +29,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@ng-bootstrap/ng-bootstrap": "~9.1.0",
     "bootstrap": "^4.5.0",
+    "dayjs": "^1.11.3",
+    "moment": "^2.29.3",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

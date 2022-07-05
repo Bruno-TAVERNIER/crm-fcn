@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as dayjs from 'dayjs';
+import * as mmt from 'moment';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  public date1 = mmt().format('DD/MM/YYYY');
+  public date2 = dayjs().format('DD/MM/YYYY');
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
+function moment() {
+  throw new Error('Function not implemented.');
+}
+
