@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageSignInComponent implements OnInit {
 
+  public title = "Sign In";
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  public changeTitle(): void {
+    this.title = "Connecte toi mon poto";
   }
 
 }

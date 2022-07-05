@@ -1,0 +1,8 @@
+.bandeau {
+  background: var(--app-primary);
+  padding: 1rem;
+  /* css: .bandeau h1 */
+  h1 {
+    color: var(--app-light);
+  }
+}
