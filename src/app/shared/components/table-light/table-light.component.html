@@ -2,16 +2,11 @@
   <thead>
     <tr>
       <!-- dépends du nombre de colonnes à afficher (boucle sur un tableau de string)-->
-      <th scope="col">#</th>
+      <th scope="col" *ngFor="let item of headers">{{ item }}</th>
     </tr>
   </thead>
   <tbody>
     <!-- afficher autant de tr qu'il y a d'item dans une collection -->
-    <tr>
-      <th scope="row">1</th>
-      <td>#1</td>
-      <td>#2</td>
-      <td>#3</td>
-    </tr>
+    <ng-content></ng-content>
   </tbody>
 </table>

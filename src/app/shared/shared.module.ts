@@ -5,11 +5,13 @@ import { BtnComponent } from './components/btn/btn.component';
 import { RouterModule } from '@angular/router';
 import { IconsModule } from '../icons/icons.module';
 import { TemplatesModule } from '../templates/templates.module';
+import { TotalPipe } from './total.pipe';
 
 @NgModule({
   declarations: [
     TableLightComponent,
-    BtnComponent
+    BtnComponent,
+    TotalPipe
   ],
   imports: [
     CommonModule, RouterModule
@@ -18,7 +20,8 @@ import { TemplatesModule } from '../templates/templates.module';
     TableLightComponent,
     BtnComponent,
     IconsModule,
-    TemplatesModule
+    TemplatesModule,
+    TotalPipe
   ]
 })
 export class SharedModule { }
