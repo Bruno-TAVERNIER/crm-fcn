@@ -7,13 +7,15 @@ import { IconsModule } from '../icons/icons.module';
 import { TemplatesModule } from '../templates/templates.module';
 import { TotalPipe } from './total.pipe';
 import { NoCommentPipe } from './pipes/no-comment.pipe';
+import { StateDirective } from './directives/state.directive';
 
 @NgModule({
   declarations: [
     TableLightComponent,
     BtnComponent,
     TotalPipe,
-    NoCommentPipe
+    NoCommentPipe,
+    StateDirective
   ],
   imports: [
     CommonModule, RouterModule
@@ -24,7 +26,8 @@ import { NoCommentPipe } from './pipes/no-comment.pipe';
     IconsModule,
     TemplatesModule,
     TotalPipe,
-    NoCommentPipe
+    NoCommentPipe,
+    StateDirective
   ]
 })
 export class SharedModule { }

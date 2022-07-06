@@ -11,3 +11,13 @@ tr:nth-child(even){
 .ko {
   background: var(--app-warning);
 }
+/* classes css pour la directive appState */
+.state-canceled {
+  background: var(--app-error);
+}
+.state-option {
+  background: var(--app-warning);
+}
+.state-confirmed {
+  background: var(--app-success);
+}
