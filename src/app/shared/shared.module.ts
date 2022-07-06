@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+//pour utiliser les formulaires dans les différents components
+import { ReactiveFormsModule } from '@angular/forms';
 import { TableLightComponent } from './components/table-light/table-light.component';
 import { BtnComponent } from './components/btn/btn.component';
 import { RouterModule } from '@angular/router';
@@ -8,6 +10,8 @@ import { TemplatesModule } from '../templates/templates.module';
 import { TotalPipe } from './total.pipe';
 import { NoCommentPipe } from './pipes/no-comment.pipe';
 import { StateDirective } from './directives/state.directive';
+import { TableDarkComponent } from './components/table-dark/table-dark.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +19,8 @@ import { StateDirective } from './directives/state.directive';
     BtnComponent,
     TotalPipe,
     NoCommentPipe,
-    StateDirective
+    StateDirective,
+    TableDarkComponent
   ],
   imports: [
     CommonModule, RouterModule
@@ -27,7 +32,9 @@ import { StateDirective } from './directives/state.directive';
     TemplatesModule,
     TotalPipe,
     NoCommentPipe,
-    StateDirective
+    StateDirective,
+    TableDarkComponent,
+    ReactiveFormsModule,
   ]
 })
 export class SharedModule { }

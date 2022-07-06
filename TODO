@@ -1,0 +1,21 @@
+Page list client (récupérer la collection clients)
+  Créer un enum (ACTIVE, INACTIVE) state-client
+  créer une interface client-i (cf db.json)
+  créer le modèle (ng g class client)
+    default state = active (en utilisant l'enum)
+    default value tva = 20
+    default value totalCaHt = 0
+  créer le service clients
+  pageListClients récupérer le flux de données retourné par le service
+    injecter le service dans le constructeur
+    créer un observable clients$
+    initialiser observable avec this.clientsService.collection
+    souscrire à l'aide du pipe async dans le html
+    déclarer le changestate et faire le subscribe à this.clientsService.changeItem
+  pagelistclients html
+    utiliser app template full width en changeant le titre
+    afficher dans le tableau nom, total ca ht, taux tva, total ttc, state
+    on peut changer le state dans le tableau
+    utiliser app-btn pour redirection vers la route clients/add
+
+Pour les clients, créer un composant (shared) table-dark
