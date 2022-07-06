@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { stateOrder } from 'src/app/core/enums/state-order.enum';
 import { Order } from 'src/app/core/models/order';
@@ -15,12 +16,15 @@ export class PageListOrdersComponent implements OnInit {
   public collection$: Observable<Order[]>;
   public states = Object.values(stateOrder);
   public headers: string[];
-  constructor(private OrderService: OrderService, private cd: ChangeDetectorRef) {
+  constructor(private OrderService: OrderService,
+              private cd: ChangeDetectorRef,
+              private router: Router) {
     /*this.OrderService.collection.subscribe((data) => {
       this.collection = data;
     });*/
     this.collection$ = this.OrderService.collection;
     this.headers = [
+      'Actions',
       'Type',
       'Client',
       'Taux TVA',
@@ -43,5 +47,9 @@ export class PageListOrdersComponent implements OnInit {
       // la référence d'item n'a pas changé donc change détection manuel
       this.cd.detectChanges();
     });
+  }
+
+  public goToEdit(id: number){
+    this.router.navigate(['orders', 'edit', id]);
   }
 }

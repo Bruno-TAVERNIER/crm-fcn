@@ -46,4 +46,7 @@ export class OrderService {
   //delete item in collection
 
   //get item by id from collection
+  public getItemById(id: number){
+    return this.http.get<Order>(`${this.urlApi}/orders/${id}`);
+  }
 }
