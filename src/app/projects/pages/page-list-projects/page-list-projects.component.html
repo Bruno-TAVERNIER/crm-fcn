@@ -1,0 +1,25 @@
+<app-template-full-width title="List Projects" *ngIf="collection$ | async as collection">
+  <app-table-light [headers]="headers">
+  <tr *ngFor="let item of collection">
+     <!-- <td>{{ item | json }}</td> -->
+     <td>
+       <app-icon-edit (click)="goToEdit(item.id)"></app-icon-edit>
+       <app-icon-delete (click)="deleteItem(item.id)"></app-icon-delete>
+     </td>
+     <td>{{ item.id }}</td>
+     <td>{{ item.name | uppercase }}</td>
+     <td>{{ item.dteDeb |date:'dd/MM/YYYY' }}</td>
+     <td>{{ item.dteFin |date:'dd/MM/YYYY' }}</td>
+     <td>{{ item.budget | currency }}</td>
+     <td>{{ item.manager }}</td>
+     <td>{{ item.client }}</td>
+     <td>{{ item.comment  }}</td>
+     <td [appState]="item.state">
+       <select (change)="changeState(item, $event)">
+         <option *ngFor="let state of states" [value]="state" [selected]="item.state === state">{{ state }}</option>
+       </select>
+     </td>
+   </tr>
+ </app-table-light>
+ <app-btn route="add" label="Add a project"></app-btn>
+</app-template-full-width>

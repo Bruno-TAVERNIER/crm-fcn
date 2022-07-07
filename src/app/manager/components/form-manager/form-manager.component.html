@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="prenom">Prénom</label>
+    <input type="text" class="form-control" formControlName="prenom" id="prenom">
+    <div class="alert alert-danger" *ngIf="form.controls['prenom'].invalid && form.controls['prenom'].touched">Champs invalide</div>
+  </div>
+  <div class="form-group">
+    <label for="nom">Nom</label>
+    <input type="text" class="form-control" formControlName="nom" id="nom">
+    <div class="alert alert-danger" *ngIf="form.controls['nom'].invalid && form.controls['nom'].touched">Champs invalide</div>
+  </div>
+  <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
+</form>

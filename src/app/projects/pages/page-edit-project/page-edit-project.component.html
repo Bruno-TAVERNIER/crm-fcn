@@ -1,0 +1,3 @@
+<app-template-container title="Edit Project">
+  <app-form-project *ngIf="item$ | async as item" [init]="item" (submitted)="edit($event)"></app-form-project>
+</app-template-container>

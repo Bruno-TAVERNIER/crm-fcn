@@ -1,0 +1,46 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" formControlName="name" id="name">
+    <div class="alert alert-danger" *ngIf="form.controls['name'].invalid && form.controls['name'].touched">Champs invalide</div>
+  </div>
+  <div class="form-group">
+    <label for="dtedeb">Date de début</label>
+    <input type="date" class="form-control" formControlName="dteDeb" id="dtedeb">
+  </div>
+  <div class="form-group">
+    <label for="dtefin">Date de fin</label>
+    <input type="date" class="form-control" formControlName="dteFin" id="dtefin">
+  </div>
+  <div class="form-group">
+    <label for="budget">Budget</label>
+    <input type="number" class="form-control" formControlName="budget" id="budget">
+  </div>
+  <div class="form-group">
+    <label for="manager">Manager</label>
+    <select class="form-control" formControlName="manager" id="manager">
+      <option *ngFor="let man of managers" [ngValue]="man.prenom + ' ' + man.nom">
+        {{ man.prenom }} {{ man.nom }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="client">Client</label>
+    <select class="form-control" formControlName="client" id="client">
+      <option *ngFor="let clt of clients" [ngValue]="clt.nom">
+        {{ clt.nom }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="state">state</label>
+    <select formControlName="state" class="form-control" formControlName="state" id="state">
+      <option *ngFor="let state of states" [ngValue]="state">{{ state }}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="comment">comment</label>
+    <textarea class="form-control" formControlName="comment" id="comment"></textarea>
+  </div>
+  <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
+</form>

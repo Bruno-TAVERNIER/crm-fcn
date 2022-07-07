@@ -48,5 +48,30 @@
       "totalCaHt": 120000,
       "comment": "Commentaire pour clien Modus"
     }
+  ],
+  "managers": [
+    {
+      "id": 1,
+      "prenom": "John",
+      "nom": "Doe"
+    },
+    {
+      "prenom": "Benhur",
+      "nom": "Marcel",
+      "id": 2
+    }
+  ],
+  "projects": [
+    {
+      "name": "Communication",
+      "dteDeb": "2022-07-04",
+      "dteFin": "2022-07-29",
+      "budget": 0,
+      "manager": "Benhur Marcel",
+      "client": "Christophe",
+      "state": "WAITING",
+      "comment": "the first",
+      "id": 1
+    }
   ]
 }

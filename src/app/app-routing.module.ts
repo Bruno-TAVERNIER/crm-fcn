@@ -13,6 +13,14 @@ const routes: Routes = [
     path: 'clients',
     loadChildren: () => import('./clients/clients.module').then((m) => m.ClientsModule),
   },
+  {
+    path: 'managers',
+    loadChildren: () => import('./manager/manager.module').then((m) => m.ManagerModule),
+  },
+  {
+    path: 'projects',
+    loadChildren: () => import('./projects/projects.module').then((m) => m.ProjectsModule),
+  },
   /* double * pour l'erreur 404 */
   {
     path: '**',

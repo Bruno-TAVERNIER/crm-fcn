@@ -1,0 +1,12 @@
+.state-waiting {
+  background: red;
+}
+.state-finished {
+  background: green;
+}
+.state-started {
+  background: orange;
+}
+.state-inprogress {
+  background: linear-gradient(45deg, orange, white, orange);
+}

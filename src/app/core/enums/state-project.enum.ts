@@ -1,0 +1,6 @@
+export enum StateProject {
+  WAITING = 'WAITING',
+  STARTED = 'STARTED',
+  INPROGRESS = 'INPROGRESS',
+  FINISHED = 'FINISHED'
+}
