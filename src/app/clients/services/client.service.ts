@@ -39,8 +39,17 @@ export class ClientService {
   }
 
   //add item in collection
+  public add(item: Client): Observable<Client> {
+    return this.http.post<Client>(`${this.urlApi}/clients`, item);
+  }
 
   //delete item in collection
+  public deleteItem(id: number): Observable<Client> {
+    return this.http.delete<Client>(`${this.urlApi}/clients/${id}`);
+  }
 
   //get item by id from collection
+  public getItemById(id: number): Observable<Client> {
+    return this.http.get<Client>(`${this.urlApi}/clients/${id}`);
+  }
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Client } from 'src/app/core/models/client';
+import { ClientService } from '../../services/client.service';
 
 @Component({
   selector: 'app-page-edit-client',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageEditClientComponent implements OnInit {
 
-  constructor() { }
+  public item$!: Observable<Client>;
 
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private clientService: ClientService) {
+                this.route.paramMap.subscribe((params) => {
+                  const id = Number(params.get('id'));
+                  this.item$ = this.clientService.getItemById(id);
+                });
+              }
+
+  ngOnInit(): void { }
+
+  public edit(item: Client): void {
+    console.log(item.id);
+    this.clientService.update(item).subscribe((res) => {
+      //traiter les erreurs de l'apip si besoin
+      this.router.navigate(['clients']);
+    });
   }
-
 }

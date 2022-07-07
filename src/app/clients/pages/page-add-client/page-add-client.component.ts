@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Client } from 'src/app/core/models/client';
+import { ClientService } from '../../services/client.service';
 
 @Component({
   selector: 'app-page-add-client',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageAddClientComponent implements OnInit {
 
-  constructor() { }
+  public item = new Client();
+  constructor(private clientService: ClientService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  public add(item: Client): void {
+    this.clientService.add(item).subscribe((res) => {
+      //traiter les erreurs éventuelles retournées par l'API
+      this.router.navigate(['clients']);
+    });
   }
-
 }

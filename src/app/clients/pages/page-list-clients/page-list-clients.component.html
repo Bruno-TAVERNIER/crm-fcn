@@ -1,6 +1,10 @@
 <app-template-full-width title="List Clients" *ngIf="collection$ | async as collection">
-  <app-table-light [headers]="headers">
+  <app-table-dark [headers]="headers">
     <tr *ngFor="let item of collection">
+      <td>
+        <app-icon-edit (click)="goToEdit(item.id)"></app-icon-edit>
+        <app-icon-delete (click)="deleteItem(item.id)"></app-icon-delete>
+      </td>
       <td>{{ item.nom }}</td>
       <td>{{ item.totalCaHt | currency }}</td>
       <td>{{ item.tva }}</td>
@@ -14,6 +18,6 @@
         </select>
       </td>
     </tr>
-  </app-table-light>
+  </app-table-dark>
   <app-btn route="add" label="Add a Client"></app-btn>
 </app-template-full-width>

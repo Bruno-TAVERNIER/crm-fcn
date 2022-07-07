@@ -29,26 +29,16 @@
       "client": "ATOS",
       "comment": "Merci Atos",
       "id": 3
-    },
-    {
-      "tjmHt": 1200,
-      "nbJours": 2,
-      "tva": 20,
-      "state": "CONFIRMED",
-      "typePresta": "Azerty",
-      "client": "Uiop",
-      "comment": "C'est cool Angular 14",
-      "id": 22
     }
   ],
   "clients": [
     {
-      "state": "ACTIVE",
-      "tva": 20,
-      "id": 1,
       "nom": "Christophe",
+      "tva": 20,
       "totalCaHt": 12000,
-      "comment": "Commentaire pour client Christophe"
+      "state": "ACTIVE",
+      "comment": "Wesh ! Commentaire pour client Christophe",
+      "id": 1
     },
     {
       "state": "INACTIVE",

@@ -52,4 +52,8 @@ export class PageListOrdersComponent implements OnInit {
   public goToEdit(id: number){
     this.router.navigate(['orders', 'edit', id]);
   }
+
+  public deleteItem(id: number): void {
+    this.OrderService.deleteItem(id).subscribe();
+  }
 }
